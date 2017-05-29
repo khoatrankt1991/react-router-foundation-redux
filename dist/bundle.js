@@ -11002,7 +11002,7 @@ var Home = function (_React$Component) {
             return _react2.default.createElement(
                 'h1',
                 null,
-                'Home Page'
+                'Welcome to my home page'
             );
         }
     }]);
@@ -11025,6 +11025,20 @@ var _react = __webpack_require__(6);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactRouterDom = __webpack_require__(99);
+
+var _Nav = __webpack_require__(96);
+
+var _Nav2 = _interopRequireDefault(_Nav);
+
+var _Home = __webpack_require__(94);
+
+var _Home2 = _interopRequireDefault(_Home);
+
+var _Page = __webpack_require__(97);
+
+var _Page2 = _interopRequireDefault(_Page);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -11046,9 +11060,36 @@ var Main = function (_React$Component) {
         key: 'render',
         value: function render() {
             return _react2.default.createElement(
-                'h1',
+                _reactRouterDom.BrowserRouter,
                 null,
-                'Main Page'
+                _react2.default.createElement(
+                    'div',
+                    null,
+                    _react2.default.createElement(
+                        'ul',
+                        null,
+                        _react2.default.createElement(
+                            'li',
+                            null,
+                            _react2.default.createElement(
+                                _reactRouterDom.Link,
+                                { to: '/' },
+                                'Home'
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'li',
+                            null,
+                            _react2.default.createElement(
+                                _reactRouterDom.Link,
+                                { to: '/page1' },
+                                'Page1'
+                            )
+                        )
+                    ),
+                    _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _Home2.default }),
+                    _react2.default.createElement(_reactRouterDom.Route, { path: '/page1', component: _Page2.default })
+                )
             );
         }
     }]);
@@ -11234,58 +11275,13 @@ var _reactDom = __webpack_require__(98);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _reactRouterDom = __webpack_require__(99);
-
 var _Main = __webpack_require__(95);
 
 var _Main2 = _interopRequireDefault(_Main);
 
-var _Nav = __webpack_require__(96);
-
-var _Nav2 = _interopRequireDefault(_Nav);
-
-var _Home = __webpack_require__(94);
-
-var _Home2 = _interopRequireDefault(_Home);
-
-var _Page = __webpack_require__(97);
-
-var _Page2 = _interopRequireDefault(_Page);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_reactDom2.default.render(_react2.default.createElement(
-    _reactRouterDom.BrowserRouter,
-    null,
-    _react2.default.createElement(
-        'div',
-        null,
-        _react2.default.createElement(
-            'ul',
-            null,
-            _react2.default.createElement(
-                'li',
-                null,
-                _react2.default.createElement(
-                    _reactRouterDom.Link,
-                    { to: '/' },
-                    'Home'
-                )
-            ),
-            _react2.default.createElement(
-                'li',
-                null,
-                _react2.default.createElement(
-                    _reactRouterDom.Link,
-                    { to: '/page1' },
-                    'Page1'
-                )
-            )
-        ),
-        _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _Home2.default }),
-        _react2.default.createElement(_reactRouterDom.Route, { path: '/page1', component: _Page2.default })
-    )
-), document.getElementById("root"));
+_reactDom2.default.render(_react2.default.createElement(_Main2.default, null), document.getElementById("root"));
 
 /***/ }),
 /* 101 */
