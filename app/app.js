@@ -10,6 +10,10 @@ import Page1 from 'Page1';
 ReactDOM.render(
 <Router>
     <div>
+         <ul>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/page1">Page1</Link></li>
+        </ul>
         <Route exact path="/" component={Home}/>
         <Route path="/page1" component={Page1}/>
     </div>

@@ -11260,6 +11260,28 @@ _reactDom2.default.render(_react2.default.createElement(
     _react2.default.createElement(
         'div',
         null,
+        _react2.default.createElement(
+            'ul',
+            null,
+            _react2.default.createElement(
+                'li',
+                null,
+                _react2.default.createElement(
+                    _reactRouterDom.Link,
+                    { to: '/' },
+                    'Home'
+                )
+            ),
+            _react2.default.createElement(
+                'li',
+                null,
+                _react2.default.createElement(
+                    _reactRouterDom.Link,
+                    { to: '/page1' },
+                    'Page1'
+                )
+            )
+        ),
         _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _Home2.default }),
         _react2.default.createElement(_reactRouterDom.Route, { path: '/page1', component: _Page2.default })
     )
