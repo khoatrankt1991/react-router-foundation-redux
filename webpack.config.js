@@ -10,7 +10,7 @@ module.exports = {
             {
                 loader: "babel-loader",
                 options: {
-                    presets: ['es2015', 'react']
+                    presets: ['es2015', 'react', 'stage-0']
                     },
                 test: /\.jsx?$/,
                 exclude: /node_modules/
@@ -22,7 +22,8 @@ module.exports = {
             "Main" : path.resolve(__dirname, "app/components/Main.js"),
             "Nav" : path.resolve(__dirname, "app/components/Nav.js"),
             "Home" : path.resolve(__dirname, "app/components/Home.js"),
-            "Page1" : path.resolve(__dirname, "app/components/Page1.js")
+            "Page1" : path.resolve(__dirname, "app/components/Page1.js"),
+            "Login" : path.resolve(__dirname, "app/components/Login.js")
         }
     }
 }
