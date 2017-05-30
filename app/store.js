@@ -14,6 +14,9 @@ store.dispatch({
     type: "LOG_IN",
     username: "khoatran"
 });
-console.log(store.getState());
+store.dispatch({
+    type: "LOG_OUT"
+});
+store.subscribe(()=>{console.log(store.getState())});
 module.exports = store;
 

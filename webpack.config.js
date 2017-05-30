@@ -23,7 +23,12 @@ module.exports = {
             "Nav" : path.resolve(__dirname, "app/components/Nav.js"),
             "Home" : path.resolve(__dirname, "app/components/Home.js"),
             "Page1" : path.resolve(__dirname, "app/components/Page1.js"),
-            "Login" : path.resolve(__dirname, "app/components/Login.js")
+            "Login" : path.resolve(__dirname, "app/components/Login.js"),
+            "account/Account" : path.resolve(__dirname, "app/components/account/Account.js"),
+            "account/SignIn" : path.resolve(__dirname, "app/components/account/SignIn.js"),
+            "account/SignOut" : path.resolve(__dirname, "app/components/account/SignOut.js"),
+            "account/SignUp" : path.resolve(__dirname, "app/components/account/SignUp.js"),
+            "account/AccountInfo" : path.resolve(__dirname, "app/components/account/AccountInfo.js")
         }
     }
 }
