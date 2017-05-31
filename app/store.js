@@ -8,15 +8,17 @@ var username = (state = null, action) => {
             return state;
     }
 };
-var reducer = redux.combineReducers({username});
-var store = redux.createStore(reducer);
-store.dispatch({
-    type: "LOG_IN",
-    username: "khoatran"
-});
-store.dispatch({
-    type: "LOG_OUT"
-});
+var listproduct = (state = [], action)=>{
+    switch(action.type) {
+        case "LIST_PRODUCT" : return action.listproduct;
+        default: return state;
+    }
+};
+var reducer = redux.combineReducers({username, listproduct});
+var store = redux.createStore(reducer, redux.compose(
+    window.devToolsExtension?window.devToolsExtension():f=>{console.log("Please Add Extension Redux Dev Tools")}
+));
+
 store.subscribe(()=>{console.log(store.getState())});
 module.exports = store;
 

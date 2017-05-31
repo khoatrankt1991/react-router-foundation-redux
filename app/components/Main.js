@@ -1,26 +1,16 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link, Redirect } from 'react-router-dom';
+import {connect} from 'react-redux';
 import Nav from 'Nav';
 import Home from 'Home';
 import Page1 from 'Page1';
 import Login from 'Login';
 import Account from 'account/Account';
-
-const fakeAuth = {
-  isAuthenticated: false,
-  authenticate(cb) {
-    this.isAuthenticated = true
-    setTimeout(cb, 100) // fake async
-  },
-  signout(cb) {
-    this.isAuthenticated = false
-    setTimeout(cb, 100)
-  }
-}
-
+import store from 'store';
+import axios from 'axios';
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route {...rest} render={props => (
-    fakeAuth.isAuthenticated ? (
+     store.getState().username!=null? (
       <Component {...props}/>
     ) : (
       <Redirect to={{
@@ -32,8 +22,13 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
 )
 
 class Main extends React.Component {
+    componentDidMount() {
+      var {dispatch} = this.props;
+      axios.get("/getInfo").then(res=>res.data!="SESSION_OUT"?dispatch({type: "LOG_IN", username: res.data}):f=>f).catch(e=>console.log(e))
+    }
     render() {
-        return (<Router>
+        return (
+                  <Router>
                     <div>
                         <ul>
                             <li><Link to="/">Home</Link></li>
@@ -44,7 +39,8 @@ class Main extends React.Component {
                         <PrivateRoute path="/page1" component={Page1}/>
                         <Route path="/account" component={Account}/>
                     </div>
-                </Router>);
+                  </Router>
+                );
     }
 }
-module.exports = Main;
+module.exports = connect()(Main);

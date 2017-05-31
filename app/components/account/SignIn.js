@@ -1,10 +1,17 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import axios from 'axios';
+
 class SignIn extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
-        var {dispatch} = this.props;
-        this.refs.username.value == "khoatran"?dispatch({type: "LOG_IN", username: this.refs.username.value}):f=>f
+        axios.post("/signIn", {
+            username: this.refs.username.value,
+            password: this.refs.password.value
+        }).then(res=>{
+            var {dispatch} = this.props;
+            res.data!="LOGIN_FAIL"?dispatch({type: "LOG_IN", username: res.data}):alert(res.data);
+        }).catch(e=>console.log("SignIn : " + e));
     }
     render() {
         return (<form onSubmit={this.handleSubmit.bind(this)}>
