@@ -16,7 +16,7 @@ var listproduct = (state = [], action)=>{
 };
 var reducer = redux.combineReducers({username, listproduct});
 var store = redux.createStore(reducer, redux.compose(
-    window.devToolsExtension?window.devToolsExtension():f=>{console.log("Please Add Extension Redux Dev Tools")}
+    window.devToolsExtension?window.devToolsExtension():f=>f
 ));
 
 store.subscribe(()=>{console.log(store.getState())});

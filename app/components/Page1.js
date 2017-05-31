@@ -20,7 +20,7 @@ class Page1 extends React.Component {
                     <div className="small-4 large-2 columns">{e.type}</div>
                     <div className="small-4 large-2 columns">{e.type}</div>
                     <div className="small-4 large-2 columns">{e.created}</div>
-                    <div className="small-4 large-2 columns"><button>Remove</button></div>
+                    <div className="small-4 large-2 columns"><button className="expanded alert button">Remove</button></div>
                 </div>)
             )}
             </div>);
