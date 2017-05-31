@@ -17,7 +17,7 @@ class SignIn extends React.Component {
         return (<form onSubmit={this.handleSubmit.bind(this)}>
                     <input type="text" ref="username"/>
                     <input type="text" ref="password"/>
-                    <button type="submit">Sign In</button>
+                    <button type="submit" className="success button">Sign In</button>
                 </form>);
     }
 }

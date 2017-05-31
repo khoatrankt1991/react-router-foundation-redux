@@ -14,12 +14,14 @@ class Page1 extends React.Component {
         if(this.props.listproduct.length == 0) return <div>Loading....</div>;
         return (<div>
             {this.props.listproduct.map( (e, i)=> 
-                (<ul key={i}>
-                    <li>{e.id}</li>
-                    <li>{e.brand}</li>
-                    <li>{e.type}</li>
-                    <li>{e.created}</li>
-                </ul>)
+                (<div className="row" key={i}>
+                    <div className="small-4 large-2 columns">{e.id}</div>
+                    <div className="small-4 large-2 columns">{e.brand}</div>
+                    <div className="small-4 large-2 columns">{e.type}</div>
+                    <div className="small-4 large-2 columns">{e.type}</div>
+                    <div className="small-4 large-2 columns">{e.created}</div>
+                    <div className="small-4 large-2 columns"><button>Remove</button></div>
+                </div>)
             )}
             </div>);
     }

@@ -30,14 +30,38 @@ class Main extends React.Component {
         return (
                   <Router>
                     <div>
-                        <ul>
+                      <div className="top-bar">
+                        <div className="top-bar-left">
+                          <ul className="dropdown menu" data-dropdown-menu>
+                            <li className="menu-text">Site Title</li>
                             <li><Link to="/">Home</Link></li>
                             <li><Link to="/account">Account</Link></li>
                             <li><Link to="/page1">Page1</Link></li>
-                        </ul>
-                        <Route exact path="/" component={Home}/>
-                        <PrivateRoute path="/page1" component={Page1}/>
-                        <Route path="/account" component={Account}/>
+                            <li>
+                              <a href="#">One</a>
+                              <ul class="menu vertical">
+                                <li><a href="#">One</a></li>
+                                <li><a href="#">Two</a></li>
+                                <li><a href="#">Three</a></li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </div>
+                        <div className="top-bar-right">
+                          <ul className="menu">
+                            <li><input type="search" placeholder="Search"/></li>
+                            <li><button type="button" className="button">Search</button></li>
+                          </ul>
+                        </div>
+                      </div>
+
+                      <div className="row demo-toggle-title">
+                        <div className="columns">
+                          <Route exact path="/" component={Home}/>
+                          <PrivateRoute path="/page1" component={Page1}/>
+                          <Route path="/account" component={Account}/>
+                        </div>
+                      </div>
                     </div>
                   </Router>
                 );

@@ -30,6 +30,9 @@
     "babel-preset-stage-0": "^6.24.1",
     "css-loader": "^0.28.4",
     "foundation-sites": "^6.3.1",
+    "install": "^0.10.1",
+    "npm": "^5.0.0",
+    "script-loader": "^0.7.0",
     "style-loader": "^0.18.1"
   },
   "dependencies": {
@@ -42,6 +45,7 @@
     "react-dom": "^15.5.4",
     "react-redux": "^5.0.5",
     "react-router-dom": "^4.1.1",
-    "redux": "^3.6.0"
+    "redux": "^3.6.0",
+    "webpack": "^2.6.1"
   }
 }
