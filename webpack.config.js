@@ -19,6 +19,7 @@ module.exports = {
     },
     resolve: {
         alias : {
+            "store" : path.resolve(__dirname, "app/store.js"),
             "Main" : path.resolve(__dirname, "app/components/Main.js"),
             "Nav" : path.resolve(__dirname, "app/components/Nav.js"),
             "Home" : path.resolve(__dirname, "app/components/Home.js"),
