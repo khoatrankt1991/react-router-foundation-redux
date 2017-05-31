@@ -8,7 +8,7 @@ class SignOut extends React.Component {
         axios.get("/signOut").then(res=>dispatch({type: "LOG_OUT"})).catch(e=>console.log(e))
     }
     render() {
-        return <button onClick={this.handleSignOut.bind(this)}>Sign out</button>
+        return <button className="expanded button" onClick={this.handleSignOut.bind(this)}>Sign out</button>
     }
 }
 module.exports = connect()(SignOut);

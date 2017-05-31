@@ -39,7 +39,7 @@ class Main extends React.Component {
                             <li><Link to="/page1">Page1</Link></li>
                             <li>
                               <a href="#">One</a>
-                              <ul class="menu vertical">
+                              <ul className="menu vertical">
                                 <li><a href="#">One</a></li>
                                 <li><a href="#">Two</a></li>
                                 <li><a href="#">Three</a></li>
@@ -56,7 +56,7 @@ class Main extends React.Component {
                       </div>
 
                       <div className="row demo-toggle-title">
-                        <div className="columns">
+                        <div className="columns my_margin_top">
                           <Route exact path="/" component={Home}/>
                           <PrivateRoute path="/page1" component={Page1}/>
                           <Route path="/account" component={Account}/>

@@ -14,11 +14,12 @@ class SignIn extends React.Component {
         }).catch(e=>console.log("SignIn : " + e));
     }
     render() {
-        return (<form onSubmit={this.handleSubmit.bind(this)}>
+        return (<div className="small-6 medium-6 large-6 columns"><h1>Sign In</h1>
+                <form onSubmit={this.handleSubmit.bind(this)}>
                     <input type="text" ref="username"/>
                     <input type="text" ref="password"/>
-                    <button type="submit" className="success button">Sign In</button>
-                </form>);
+                    <button type="submit" className="expanded button">Sign In</button>
+                </form></div>);
     }
 }
 module.exports = connect()(SignIn);
