@@ -20,7 +20,7 @@ class Grid extends React.Component {
     }*/
     render() {
         if(this.props.source.length == 0) return <div>Loading....</div>;
-        return (<div>
+        return (<div><div className="row">Total : {this.props.source.length}</div>
             {this.props.source.map( (e, i)=> 
                 (<div className="row" key={i}>
                    {this.props.cols.map((e1,i1)=>(<div className={e1.css} key={i+''+i1}>{e1.action==null?e[e1.id]:e1.action(e)}</div>))}

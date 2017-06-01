@@ -41,7 +41,7 @@ app.get("/getInfo", (req, res)=>{
 });
 app.get("/page1", (req, res)=>{
     var arr = [];
-    for( var i =0; i < 10; i++) {
+    for( var i =0; i < 100; i++) {
         var obj = {
         id: i,
             brand: "Apple",
