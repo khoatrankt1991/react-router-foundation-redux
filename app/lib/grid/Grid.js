@@ -1,7 +1,7 @@
 import React from 'react';
 
 class Grid extends React.Component {
-    constructor(props) {
+    /*constructor(props) {
         super(props);
         this.state = {
             header: ["Id", "Brand", "Type", "Created", "Action"],
@@ -11,19 +11,19 @@ class Grid extends React.Component {
                 { id: "type", css: "small-4 large-2 columns", action: null},
                 { id: "type", css: "small-4 large-2 columns", action: null},
                 { id: "created", css: "small-4 large-2 columns", action: null},
-                { id: "remove", css: "small-4 large-2 columns", action: ()=>{
+                { id: "remove", css: "small-4 large-2 columns", action: (e)=>{
                     return <button className="button expanded alert">Remove</button>
                 }}
             ]
             //source: []
         };
-    }
+    }*/
     render() {
         if(this.props.source.length == 0) return <div>Loading....</div>;
         return (<div>
             {this.props.source.map( (e, i)=> 
                 (<div className="row" key={i}>
-                   {this.state.cols.map((e1,i1)=>(<div className={e1.css} key={i+''+i1}>{e1.action==null?e[e1.id]:e1.action()}</div>))}
+                   {this.props.cols.map((e1,i1)=>(<div className={e1.css} key={i+''+i1}>{e1.action==null?e[e1.id]:e1.action(e)}</div>))}
                 </div>)
             )}
             </div>);

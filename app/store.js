@@ -11,6 +11,7 @@ var username = (state = null, action) => {
 var listproduct = (state = [], action)=>{
     switch(action.type) {
         case "LIST_PRODUCT" : return action.listproduct;
+        case "REMOVE_ITEM"  : return state.filter((e,i)=>e.id != action.id);
         default: return state;
     }
 };
