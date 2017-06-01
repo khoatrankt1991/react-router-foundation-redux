@@ -1,6 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 import {connect} from 'react-redux';
+import Grid from '../lib/grid/Grid.js';
+
 class Page1 extends React.Component {
     componentDidMount() {
         axios.get("/page1").then(res=>{
@@ -10,20 +12,9 @@ class Page1 extends React.Component {
         }).catch(e=>console.log(e))
     }
     render() {
-        console.log("PAGE 1 RENDER");
-        if(this.props.listproduct.length == 0) return <div>Loading....</div>;
-        return (<div>
-            {this.props.listproduct.map( (e, i)=> 
-                (<div className="row" key={i}>
-                    <div className="small-4 large-2 columns">{e.id}</div>
-                    <div className="small-4 large-2 columns">{e.brand}</div>
-                    <div className="small-4 large-2 columns">{e.type}</div>
-                    <div className="small-4 large-2 columns">{e.type}</div>
-                    <div className="small-4 large-2 columns">{e.created}</div>
-                    <div className="small-4 large-2 columns"><button className="expanded alert button">Remove</button></div>
-                </div>)
-            )}
-            </div>);
+        // console.log("PAGE 1 RENDER1");
+         if(this.props.listproduct.length == 0) return <div>Loading....</div>;
+         return (<Grid source={this.props.listproduct}/>);
     }
 }
 module.exports = connect(function(state){
